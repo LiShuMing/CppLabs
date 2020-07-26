@@ -6,6 +6,7 @@
 #define CPPLABS_STD_LAB_H
 
 #include <iostream>
+#include <memory>
 #include <type_traits>
 
 
@@ -14,7 +15,9 @@ public:
   explicit StdLab() {}
   ~StdLab() {}
 
-  void Test();
+  void Test1();
+
+  void TestSmartPtr();
 };
 
 
