@@ -1,4 +1,7 @@
 
+data_struct.cpp:
+	g++ -lpthread -DSMART_POLITE ./data_struct.cpp && ./a.out
+
 lock_problem_dining:
 	g++ -lpthread -DSMART_POLITE ./lock_problem_dining.cpp && ./a.out
 
