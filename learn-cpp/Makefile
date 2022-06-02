@@ -4,7 +4,7 @@ lock_problem_cond:
 	#g++ --std=c11 -lpthread -DSMART_POLITE ./lock_problem_cond.cpp && ./a.out
 
 data_struct:
-	g++ -lpthread -DSMART_POLITE ./data_struct.cpp && ./a.out
+	g++ -O1 -g -lpthread -DSMART_POLITE ./data_struct.cpp && ./a.out
 
 lock_problem_dining:
 	g++ -lpthread -DSMART_POLITE ./lock_problem_dining.cpp && ./a.out

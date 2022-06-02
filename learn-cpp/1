@@ -1,0 +1,900 @@
+
+a.out:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400bf0 <_init>:
+  400bf0:	48 83 ec 08          	sub    $0x8,%rsp
+  400bf4:	48 8b 05 fd 13 20 00 	mov    0x2013fd(%rip),%rax        # 601ff8 <_DYNAMIC+0x210>
+  400bfb:	48 85 c0             	test   %rax,%rax
+  400bfe:	74 05                	je     400c05 <_init+0x15>
+  400c00:	e8 3b 01 00 00       	callq  400d40 <__gmon_start__@plt>
+  400c05:	48 83 c4 08          	add    $0x8,%rsp
+  400c09:	c3                   	retq   
+
+Disassembly of section .plt:
+
+0000000000400c10 <__errno_location@plt-0x10>:
+  400c10:	ff 35 f2 13 20 00    	pushq  0x2013f2(%rip)        # 602008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  400c16:	ff 25 f4 13 20 00    	jmpq   *0x2013f4(%rip)        # 602010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  400c1c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400c20 <__errno_location@plt>:
+  400c20:	ff 25 f2 13 20 00    	jmpq   *0x2013f2(%rip)        # 602018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  400c26:	68 00 00 00 00       	pushq  $0x0
+  400c2b:	e9 e0 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400c30 <_ZSt9terminatev@plt>:
+  400c30:	ff 25 ea 13 20 00    	jmpq   *0x2013ea(%rip)        # 602020 <_GLOBAL_OFFSET_TABLE_+0x20>
+  400c36:	68 01 00 00 00       	pushq  $0x1
+  400c3b:	e9 d0 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400c40 <nanosleep@plt>:
+  400c40:	ff 25 e2 13 20 00    	jmpq   *0x2013e2(%rip)        # 602028 <_GLOBAL_OFFSET_TABLE_+0x28>
+  400c46:	68 02 00 00 00       	pushq  $0x2
+  400c4b:	e9 c0 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400c50 <_ZNSt6thread6_StateD2Ev@plt>:
+  400c50:	ff 25 da 13 20 00    	jmpq   *0x2013da(%rip)        # 602030 <_GLOBAL_OFFSET_TABLE_+0x30>
+  400c56:	68 03 00 00 00       	pushq  $0x3
+  400c5b:	e9 b0 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400c60 <_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@plt>:
+  400c60:	ff 25 d2 13 20 00    	jmpq   *0x2013d2(%rip)        # 602038 <_GLOBAL_OFFSET_TABLE_+0x38>
+  400c66:	68 04 00 00 00       	pushq  $0x4
+  400c6b:	e9 a0 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400c70 <pthread_create@plt>:
+  400c70:	ff 25 ca 13 20 00    	jmpq   *0x2013ca(%rip)        # 602040 <_GLOBAL_OFFSET_TABLE_+0x40>
+  400c76:	68 05 00 00 00       	pushq  $0x5
+  400c7b:	e9 90 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400c80 <__cxa_atexit@plt>:
+  400c80:	ff 25 c2 13 20 00    	jmpq   *0x2013c2(%rip)        # 602048 <_GLOBAL_OFFSET_TABLE_+0x48>
+  400c86:	68 06 00 00 00       	pushq  $0x6
+  400c8b:	e9 80 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400c90 <_ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE@plt>:
+  400c90:	ff 25 ba 13 20 00    	jmpq   *0x2013ba(%rip)        # 602050 <_GLOBAL_OFFSET_TABLE_+0x50>
+  400c96:	68 07 00 00 00       	pushq  $0x7
+  400c9b:	e9 70 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400ca0 <_ZdlPv@plt>:
+  400ca0:	ff 25 b2 13 20 00    	jmpq   *0x2013b2(%rip)        # 602058 <_GLOBAL_OFFSET_TABLE_+0x58>
+  400ca6:	68 08 00 00 00       	pushq  $0x8
+  400cab:	e9 60 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400cb0 <_Znwm@plt>:
+  400cb0:	ff 25 aa 13 20 00    	jmpq   *0x2013aa(%rip)        # 602060 <_GLOBAL_OFFSET_TABLE_+0x60>
+  400cb6:	68 09 00 00 00       	pushq  $0x9
+  400cbb:	e9 50 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400cc0 <_ZdlPvm@plt>:
+  400cc0:	ff 25 a2 13 20 00    	jmpq   *0x2013a2(%rip)        # 602068 <_GLOBAL_OFFSET_TABLE_+0x68>
+  400cc6:	68 0a 00 00 00       	pushq  $0xa
+  400ccb:	e9 40 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400cd0 <_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@plt>:
+  400cd0:	ff 25 9a 13 20 00    	jmpq   *0x20139a(%rip)        # 602070 <_GLOBAL_OFFSET_TABLE_+0x70>
+  400cd6:	68 0b 00 00 00       	pushq  $0xb
+  400cdb:	e9 30 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400ce0 <_ZNSt8ios_base4InitC1Ev@plt>:
+  400ce0:	ff 25 92 13 20 00    	jmpq   *0x201392(%rip)        # 602078 <_GLOBAL_OFFSET_TABLE_+0x78>
+  400ce6:	68 0c 00 00 00       	pushq  $0xc
+  400ceb:	e9 20 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400cf0 <__gxx_personality_v0@plt>:
+  400cf0:	ff 25 8a 13 20 00    	jmpq   *0x20138a(%rip)        # 602080 <_GLOBAL_OFFSET_TABLE_+0x80>
+  400cf6:	68 0d 00 00 00       	pushq  $0xd
+  400cfb:	e9 10 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400d00 <_ZNSt6thread4joinEv@plt>:
+  400d00:	ff 25 82 13 20 00    	jmpq   *0x201382(%rip)        # 602088 <_GLOBAL_OFFSET_TABLE_+0x88>
+  400d06:	68 0e 00 00 00       	pushq  $0xe
+  400d0b:	e9 00 ff ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400d10 <_ZNSolsEi@plt>:
+  400d10:	ff 25 7a 13 20 00    	jmpq   *0x20137a(%rip)        # 602090 <_GLOBAL_OFFSET_TABLE_+0x90>
+  400d16:	68 0f 00 00 00       	pushq  $0xf
+  400d1b:	e9 f0 fe ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400d20 <_Unwind_Resume@plt>:
+  400d20:	ff 25 72 13 20 00    	jmpq   *0x201372(%rip)        # 602098 <_GLOBAL_OFFSET_TABLE_+0x98>
+  400d26:	68 10 00 00 00       	pushq  $0x10
+  400d2b:	e9 e0 fe ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400d30 <__libc_start_main@plt>:
+  400d30:	ff 25 6a 13 20 00    	jmpq   *0x20136a(%rip)        # 6020a0 <_GLOBAL_OFFSET_TABLE_+0xa0>
+  400d36:	68 11 00 00 00       	pushq  $0x11
+  400d3b:	e9 d0 fe ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400d40 <__gmon_start__@plt>:
+  400d40:	ff 25 62 13 20 00    	jmpq   *0x201362(%rip)        # 6020a8 <_GLOBAL_OFFSET_TABLE_+0xa8>
+  400d46:	68 12 00 00 00       	pushq  $0x12
+  400d4b:	e9 c0 fe ff ff       	jmpq   400c10 <_init+0x20>
+
+0000000000400d50 <_ZNSt8ios_base4InitD1Ev@plt>:
+  400d50:	ff 25 5a 13 20 00    	jmpq   *0x20135a(%rip)        # 6020b0 <_GLOBAL_OFFSET_TABLE_+0xb0>
+  400d56:	68 13 00 00 00       	pushq  $0x13
+  400d5b:	e9 b0 fe ff ff       	jmpq   400c10 <_init+0x20>
+
+Disassembly of section .text:
+
+0000000000400d60 <_start>:
+  400d60:	31 ed                	xor    %ebp,%ebp
+  400d62:	49 89 d1             	mov    %rdx,%r9
+  400d65:	5e                   	pop    %rsi
+  400d66:	48 89 e2             	mov    %rsp,%rdx
+  400d69:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  400d6d:	50                   	push   %rax
+  400d6e:	54                   	push   %rsp
+  400d6f:	49 c7 c0 90 12 40 00 	mov    $0x401290,%r8
+  400d76:	48 c7 c1 20 12 40 00 	mov    $0x401220,%rcx
+  400d7d:	48 c7 c7 6f 0e 40 00 	mov    $0x400e6f,%rdi
+  400d84:	e8 a7 ff ff ff       	callq  400d30 <__libc_start_main@plt>
+  400d89:	f4                   	hlt    
+  400d8a:	66 90                	xchg   %ax,%ax
+  400d8c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400d90 <deregister_tm_clones>:
+  400d90:	b8 c8 20 60 00       	mov    $0x6020c8,%eax
+  400d95:	48 3d c8 20 60 00    	cmp    $0x6020c8,%rax
+  400d9b:	74 13                	je     400db0 <deregister_tm_clones+0x20>
+  400d9d:	b8 00 00 00 00       	mov    $0x0,%eax
+  400da2:	48 85 c0             	test   %rax,%rax
+  400da5:	74 09                	je     400db0 <deregister_tm_clones+0x20>
+  400da7:	bf c8 20 60 00       	mov    $0x6020c8,%edi
+  400dac:	ff e0                	jmpq   *%rax
+  400dae:	66 90                	xchg   %ax,%ax
+  400db0:	c3                   	retq   
+  400db1:	66 66 66 66 66 66 2e 	data32 data32 data32 data32 data32 nopw %cs:0x0(%rax,%rax,1)
+  400db8:	0f 1f 84 00 00 00 00 
+  400dbf:	00 
+
+0000000000400dc0 <register_tm_clones>:
+  400dc0:	be c8 20 60 00       	mov    $0x6020c8,%esi
+  400dc5:	48 81 ee c8 20 60 00 	sub    $0x6020c8,%rsi
+  400dcc:	48 c1 fe 03          	sar    $0x3,%rsi
+  400dd0:	48 89 f0             	mov    %rsi,%rax
+  400dd3:	48 c1 e8 3f          	shr    $0x3f,%rax
+  400dd7:	48 01 c6             	add    %rax,%rsi
+  400dda:	48 d1 fe             	sar    %rsi
+  400ddd:	74 11                	je     400df0 <register_tm_clones+0x30>
+  400ddf:	b8 00 00 00 00       	mov    $0x0,%eax
+  400de4:	48 85 c0             	test   %rax,%rax
+  400de7:	74 07                	je     400df0 <register_tm_clones+0x30>
+  400de9:	bf c8 20 60 00       	mov    $0x6020c8,%edi
+  400dee:	ff e0                	jmpq   *%rax
+  400df0:	c3                   	retq   
+  400df1:	66 66 66 66 66 66 2e 	data32 data32 data32 data32 data32 nopw %cs:0x0(%rax,%rax,1)
+  400df8:	0f 1f 84 00 00 00 00 
+  400dff:	00 
+
+0000000000400e00 <__do_global_dtors_aux>:
+  400e00:	80 3d 61 14 20 00 00 	cmpb   $0x0,0x201461(%rip)        # 602268 <completed.7243>
+  400e07:	75 17                	jne    400e20 <__do_global_dtors_aux+0x20>
+  400e09:	55                   	push   %rbp
+  400e0a:	48 89 e5             	mov    %rsp,%rbp
+  400e0d:	e8 7e ff ff ff       	callq  400d90 <deregister_tm_clones>
+  400e12:	c6 05 4f 14 20 00 01 	movb   $0x1,0x20144f(%rip)        # 602268 <completed.7243>
+  400e19:	5d                   	pop    %rbp
+  400e1a:	c3                   	retq   
+  400e1b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  400e20:	c3                   	retq   
+  400e21:	66 66 66 66 66 66 2e 	data32 data32 data32 data32 data32 nopw %cs:0x0(%rax,%rax,1)
+  400e28:	0f 1f 84 00 00 00 00 
+  400e2f:	00 
+
+0000000000400e30 <frame_dummy>:
+  400e30:	eb 8e                	jmp    400dc0 <register_tm_clones>
+  400e32:	66 90                	xchg   %ax,%ax
+
+0000000000400e34 <_Z9thread_f1v>:
+#define N_THREAD 1000
+
+//atomic<int> a{0};
+int a{0};
+
+void thread_f1() {
+  400e34:	48 83 ec 18          	sub    $0x18,%rsp
+    a++;
+  400e38:	83 05 2d 14 20 00 01 	addl   $0x1,0x20142d(%rip)        # 60226c <a>
+	if (__rtime <= __rtime.zero())
+	  return;
+	auto __s = chrono::duration_cast<chrono::seconds>(__rtime);
+	auto __ns = chrono::duration_cast<chrono::nanoseconds>(__rtime - __s);
+#ifdef _GLIBCXX_USE_NANOSLEEP
+	__gthread_time_t __ts =
+  400e3f:	48 c7 04 24 00 00 00 	movq   $0x0,(%rsp)
+  400e46:	00 
+  400e47:	48 c7 44 24 08 80 96 	movq   $0x989680,0x8(%rsp)
+  400e4e:	98 00 
+	  {
+	    static_cast<std::time_t>(__s.count()),
+	    static_cast<long>(__ns.count())
+	  };
+	while (::nanosleep(&__ts, &__ts) == -1 && errno == EINTR)
+  400e50:	48 89 e6             	mov    %rsp,%rsi
+  400e53:	48 89 e7             	mov    %rsp,%rdi
+  400e56:	e8 e5 fd ff ff       	callq  400c40 <nanosleep@plt>
+  400e5b:	83 f8 ff             	cmp    $0xffffffff,%eax
+  400e5e:	75 0a                	jne    400e6a <_Z9thread_f1v+0x36>
+  400e60:	e8 bb fd ff ff       	callq  400c20 <__errno_location@plt>
+  400e65:	83 38 04             	cmpl   $0x4,(%rax)
+  400e68:	74 e6                	je     400e50 <_Z9thread_f1v+0x1c>
+    std::this_thread::sleep_for(10ms);
+}
+  400e6a:	48 83 c4 18          	add    $0x18,%rsp
+  400e6e:	c3                   	retq   
+
+0000000000400e6f <main>:
+
+int main() {
+  400e6f:	53                   	push   %rbx
+  400e70:	48 83 ec 30          	sub    $0x30,%rsp
+	pointer _M_start;
+	pointer _M_finish;
+	pointer _M_end_of_storage;
+
+	_Vector_impl()
+	: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
+  400e74:	48 c7 04 24 00 00 00 	movq   $0x0,(%rsp)
+  400e7b:	00 
+  400e7c:	48 c7 44 24 08 00 00 	movq   $0x0,0x8(%rsp)
+  400e83:	00 00 
+  400e85:	48 c7 44 24 10 00 00 	movq   $0x0,0x10(%rsp)
+  400e8c:	00 00 
+  400e8e:	bb e8 03 00 00       	mov    $0x3e8,%ebx
+  400e93:	eb 5e                	jmp    400ef3 <main+0x84>
+    template<typename _Callable>
+      struct _State_impl : public _State
+      {
+	_Callable		_M_func;
+
+	_State_impl(_Callable&& __f) : _M_func(std::forward<_Callable>(__f))
+  400e95:	48 c7 00 28 13 40 00 	movq   $0x401328,(%rax)
+      constexpr _Head_base(const _Head_base&) = default;
+      constexpr _Head_base(_Head_base&&) = default;
+
+      template<typename _UHead>
+        constexpr _Head_base(_UHead&& __h)
+	: _M_head_impl(std::forward<_UHead>(__h)) { }
+  400e9c:	48 c7 40 08 34 0e 40 	movq   $0x400e34,0x8(%rax)
+  400ea3:	00 
+	       is_default_constructible<_Dp>>::value>;
+
+      using pointer = typename _Ptr<_Tp, _Dp>::type;
+
+      __uniq_ptr_impl() = default;
+      __uniq_ptr_impl(pointer __p) : _M_t() { _M_ptr() = __p; }
+  400ea4:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+	// Create a reference to pthread_create, not just the gthr weak symbol.
+	auto __depend = reinterpret_cast<void(*)()>(&pthread_create);
+#else
+	auto __depend = nullptr;
+#endif
+        _M_start_thread(_S_make_state(
+  400ea9:	ba 70 0c 40 00       	mov    $0x400c70,%edx
+  400eae:	48 8d 74 24 28       	lea    0x28(%rsp),%rsi
+  400eb3:	48 8d 7c 24 20       	lea    0x20(%rsp),%rdi
+  400eb8:	e8 d3 fd ff ff       	callq  400c90 <_ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE@plt>
+
+      /// Destructor, invokes the deleter if the stored pointer is not null.
+      ~unique_ptr() noexcept
+      {
+	auto& __ptr = _M_t._M_ptr();
+	if (__ptr != nullptr)
+  400ebd:	48 8b 7c 24 28       	mov    0x28(%rsp),%rdi
+  400ec2:	48 85 ff             	test   %rdi,%rdi
+  400ec5:	74 06                	je     400ecd <main+0x5e>
+      {
+	static_assert(!is_void<_Tp>::value,
+		      "can't delete pointer to incomplete type");
+	static_assert(sizeof(_Tp)>0,
+		      "can't delete pointer to incomplete type");
+	delete __ptr;
+  400ec7:	48 8b 07             	mov    (%rdi),%rax
+  400eca:	ff 50 08             	callq  *0x8(%rax)
+      void
+#endif
+      vector<_Tp, _Alloc>::
+      emplace_back(_Args&&... __args)
+      {
+	if (this->_M_impl._M_finish != this->_M_impl._M_end_of_storage)
+  400ecd:	48 8b 74 24 08       	mov    0x8(%rsp),%rsi
+  400ed2:	48 3b 74 24 10       	cmp    0x10(%rsp),%rsi
+  400ed7:	74 52                	je     400f2b <main+0xbc>
+    class id
+    {
+      native_handle_type	_M_thread;
+
+    public:
+      id() noexcept : _M_thread() { }
+  400ed9:	48 c7 06 00 00 00 00 	movq   $0x0,(%rsi)
+    {
+      // concept requirements
+      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+
+      _Tp __tmp = _GLIBCXX_MOVE(__a);
+      __a = _GLIBCXX_MOVE(__b);
+  400ee0:	48 8b 44 24 20       	mov    0x20(%rsp),%rax
+  400ee5:	48 89 06             	mov    %rax,(%rsi)
+	  {
+	    _GLIBCXX_ASAN_ANNOTATE_GROW(1);
+	    _Alloc_traits::construct(this->_M_impl, this->_M_impl._M_finish,
+				     std::forward<_Args>(__args)...);
+	    ++this->_M_impl._M_finish;
+  400ee8:	48 83 44 24 08 08    	addq   $0x8,0x8(%rsp)
+	for (int i=0; i < 100; i++) {
+		cout<<"i:"<<i<<", popcount:"<<__builtin_popcount(i)<<endl;
+	}*/
+
+    vector<thread> ts;
+    for (int i=0; i<N_THREAD; i++) {
+  400eee:	83 eb 01             	sub    $0x1,%ebx
+  400ef1:	74 52                	je     400f45 <main+0xd6>
+  400ef3:	48 c7 44 24 20 00 00 	movq   $0x0,0x20(%rsp)
+  400efa:	00 00 
+    template<typename _Callable>
+      static _State_ptr
+      _S_make_state(_Callable&& __f)
+      {
+	using _Impl = _State_impl<_Callable>;
+	return _State_ptr{new _Impl{std::forward<_Callable>(__f)}};
+  400efc:	bf 10 00 00 00       	mov    $0x10,%edi
+  400f01:	e8 aa fd ff ff       	callq  400cb0 <_Znwm@plt>
+  400f06:	eb 8d                	jmp    400e95 <main+0x26>
+  400f08:	48 89 c3             	mov    %rax,%rbx
+
+      /// Destructor, invokes the deleter if the stored pointer is not null.
+      ~unique_ptr() noexcept
+      {
+	auto& __ptr = _M_t._M_ptr();
+	if (__ptr != nullptr)
+  400f0b:	48 8b 7c 24 28       	mov    0x28(%rsp),%rdi
+  400f10:	48 85 ff             	test   %rdi,%rdi
+  400f13:	74 06                	je     400f1b <main+0xac>
+      {
+	static_assert(!is_void<_Tp>::value,
+		      "can't delete pointer to incomplete type");
+	static_assert(sizeof(_Tp)>0,
+		      "can't delete pointer to incomplete type");
+	delete __ptr;
+  400f15:	48 8b 07             	mov    (%rdi),%rax
+  400f18:	ff 50 08             	callq  *0x8(%rax)
+    /**
+	for (int i=0; i < 100; i++) {
+		cout<<"i:"<<i<<", popcount:"<<__builtin_popcount(i)<<endl;
+	}*/
+
+    vector<thread> ts;
+  400f1b:	48 89 e7             	mov    %rsp,%rdi
+  400f1e:	e8 0b 01 00 00       	callq  40102e <_ZNSt6vectorISt6threadSaIS0_EED1Ev>
+  400f23:	48 89 df             	mov    %rbx,%rdi
+  400f26:	e8 f5 fd ff ff       	callq  400d20 <_Unwind_Resume@plt>
+	    _GLIBCXX_ASAN_ANNOTATE_GREW(1);
+	  }
+	else
+	  _M_realloc_insert(end(), std::forward<_Args>(__args)...);
+  400f2b:	48 8d 54 24 20       	lea    0x20(%rsp),%rdx
+  400f30:	48 89 e7             	mov    %rsp,%rdi
+  400f33:	e8 32 01 00 00       	callq  40106a <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_>
+	    __depend);
+      }
+
+    ~thread()
+    {
+      if (joinable())
+  400f38:	48 83 7c 24 20 00    	cmpq   $0x0,0x20(%rsp)
+  400f3e:	74 ae                	je     400eee <main+0x7f>
+	std::terminate();
+  400f40:	e8 eb fc ff ff       	callq  400c30 <_ZSt9terminatev@plt>
+  400f45:	bb 00 00 00 00       	mov    $0x0,%ebx
+  400f4a:	eb 0d                	jmp    400f59 <main+0xea>
+  400f4c:	48 83 c3 08          	add    $0x8,%rbx
+    for (int i=0; i<N_THREAD; i++) {
+        ts.emplace_back(std::thread(thread_f1));
+    }
+    for (int i=0; i<N_THREAD; i++) {
+  400f50:	48 81 fb 40 1f 00 00 	cmp    $0x1f40,%rbx
+  400f57:	74 0e                	je     400f67 <main+0xf8>
+       */
+      reference
+      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+      {
+	__glibcxx_requires_subscript(__n);
+	return *(this->_M_impl._M_start + __n);
+  400f59:	48 89 df             	mov    %rbx,%rdi
+  400f5c:	48 03 3c 24          	add    (%rsp),%rdi
+        ts[i].join();
+  400f60:	e8 9b fd ff ff       	callq  400d00 <_ZNSt6thread4joinEv@plt>
+  400f65:	eb e5                	jmp    400f4c <main+0xdd>
+    operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+    {
+      if (!__s)
+	__out.setstate(ios_base::badbit);
+      else
+	__ostream_insert(__out, __s,
+  400f67:	ba 0a 00 00 00       	mov    $0xa,%edx
+  400f6c:	be a4 12 40 00       	mov    $0x4012a4,%esi
+  400f71:	bf 00 21 60 00       	mov    $0x602100,%edi
+  400f76:	e8 55 fd ff ff       	callq  400cd0 <_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@plt>
+    }
+    //cout<<"final sum:"<<a.load()<<endl;
+    cout<<"final sum:"<<a<<endl;
+  400f7b:	8b 35 eb 12 20 00    	mov    0x2012eb(%rip),%esi        # 60226c <a>
+  400f81:	bf 00 21 60 00       	mov    $0x602100,%edi
+  400f86:	e8 85 fd ff ff       	callq  400d10 <_ZNSolsEi@plt>
+      operator<<(__ostream_type& (*__pf)(__ostream_type&))
+      {
+	// _GLIBCXX_RESOLVE_LIB_DEFECTS
+	// DR 60. What is a formatted input function?
+	// The inserters for manipulators are *not* formatted output functions.
+	return __pf(*this);
+  400f8b:	48 89 c7             	mov    %rax,%rdi
+  400f8e:	e8 cd fc ff ff       	callq  400c60 <_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@plt>
+  400f93:	eb 1d                	jmp    400fb2 <main+0x143>
+	    __depend);
+      }
+
+    ~thread()
+    {
+      if (joinable())
+  400f95:	48 83 7c 24 20 00    	cmpq   $0x0,0x20(%rsp)
+  400f9b:	74 05                	je     400fa2 <main+0x133>
+	std::terminate();
+  400f9d:	e8 8e fc ff ff       	callq  400c30 <_ZSt9terminatev@plt>
+  400fa2:	48 89 c3             	mov    %rax,%rbx
+  400fa5:	e9 71 ff ff ff       	jmpq   400f1b <main+0xac>
+  400faa:	48 89 c3             	mov    %rax,%rbx
+  400fad:	e9 69 ff ff ff       	jmpq   400f1b <main+0xac>
+    /**
+	for (int i=0; i < 100; i++) {
+		cout<<"i:"<<i<<", popcount:"<<__builtin_popcount(i)<<endl;
+	}*/
+
+    vector<thread> ts;
+  400fb2:	48 89 e7             	mov    %rsp,%rdi
+  400fb5:	e8 74 00 00 00       	callq  40102e <_ZNSt6vectorISt6threadSaIS0_EED1Ev>
+        ts[i].join();
+    }
+    //cout<<"final sum:"<<a.load()<<endl;
+    cout<<"final sum:"<<a<<endl;
+	return 0;
+}
+  400fba:	b8 00 00 00 00       	mov    $0x0,%eax
+  400fbf:	48 83 c4 30          	add    $0x30,%rsp
+  400fc3:	5b                   	pop    %rbx
+  400fc4:	c3                   	retq   
+
+0000000000400fc5 <_GLOBAL__sub_I_a>:
+  400fc5:	48 83 ec 08          	sub    $0x8,%rsp
+  extern wostream wclog;	/// Linked to standard error (buffered)
+#endif
+  //@}
+
+  // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  static ios_base::Init __ioinit;
+  400fc9:	bf 70 22 60 00       	mov    $0x602270,%edi
+  400fce:	e8 0d fd ff ff       	callq  400ce0 <_ZNSt8ios_base4InitC1Ev@plt>
+  400fd3:	ba c0 20 60 00       	mov    $0x6020c0,%edx
+  400fd8:	be 70 22 60 00       	mov    $0x602270,%esi
+  400fdd:	bf 50 0d 40 00       	mov    $0x400d50,%edi
+  400fe2:	e8 99 fc ff ff       	callq  400c80 <__cxa_atexit@plt>
+  400fe7:	48 83 c4 08          	add    $0x8,%rsp
+  400feb:	c3                   	retq   
+
+0000000000400fec <_ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvvEEEEEE6_M_runEv>:
+
+	_State_impl(_Callable&& __f) : _M_func(std::forward<_Callable>(__f))
+	{ }
+
+	void
+	_M_run() { _M_func(); }
+  400fec:	48 83 ec 08          	sub    $0x8,%rsp
+    { return static_cast<_Up&&>(__t); }
+
+  template<typename _Res, typename _Fn, typename... _Args>
+    constexpr _Res
+    __invoke_impl(__invoke_other, _Fn&& __f, _Args&&... __args)
+    { return std::forward<_Fn>(__f)(std::forward<_Args>(__args)...); }
+  400ff0:	ff 57 08             	callq  *0x8(%rdi)
+  400ff3:	48 83 c4 08          	add    $0x8,%rsp
+  400ff7:	c3                   	retq   
+
+0000000000400ff8 <_ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvvEEEEEED1Ev>:
+    static unsigned int
+    hardware_concurrency() noexcept;
+
+  private:
+    template<typename _Callable>
+      struct _State_impl : public _State
+  400ff8:	48 83 ec 08          	sub    $0x8,%rsp
+  400ffc:	48 c7 07 28 13 40 00 	movq   $0x401328,(%rdi)
+  401003:	e8 48 fc ff ff       	callq  400c50 <_ZNSt6thread6_StateD2Ev@plt>
+  401008:	48 83 c4 08          	add    $0x8,%rsp
+  40100c:	c3                   	retq   
+  40100d:	90                   	nop
+
+000000000040100e <_ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvvEEEEEED0Ev>:
+  40100e:	53                   	push   %rbx
+  40100f:	48 89 fb             	mov    %rdi,%rbx
+  401012:	48 c7 07 28 13 40 00 	movq   $0x401328,(%rdi)
+  401019:	e8 32 fc ff ff       	callq  400c50 <_ZNSt6thread6_StateD2Ev@plt>
+  40101e:	be 10 00 00 00       	mov    $0x10,%esi
+  401023:	48 89 df             	mov    %rbx,%rdi
+  401026:	e8 95 fc ff ff       	callq  400cc0 <_ZdlPvm@plt>
+  40102b:	5b                   	pop    %rbx
+  40102c:	c3                   	retq   
+  40102d:	90                   	nop
+
+000000000040102e <_ZNSt6vectorISt6threadSaIS0_EED1Ev>:
+       *  The dtor only erases the elements, and note that if the
+       *  elements themselves are pointers, the pointed-to memory is
+       *  not touched in any way.  Managing the pointer is the user's
+       *  responsibility.
+       */
+      ~vector() _GLIBCXX_NOEXCEPT
+  40102e:	48 83 ec 08          	sub    $0x8,%rsp
+      {
+	std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+  401032:	48 8b 57 08          	mov    0x8(%rdi),%rdx
+  401036:	48 8b 07             	mov    (%rdi),%rax
+    {
+      template<typename _ForwardIterator>
+        static void
+        __destroy(_ForwardIterator __first, _ForwardIterator __last)
+	{
+	  for (; __first != __last; ++__first)
+  401039:	48 39 c2             	cmp    %rax,%rdx
+  40103c:	74 1a                	je     401058 <_ZNSt6vectorISt6threadSaIS0_EED1Ev+0x2a>
+	    __depend);
+      }
+
+    ~thread()
+    {
+      if (joinable())
+  40103e:	48 83 38 00          	cmpq   $0x0,(%rax)
+  401042:	75 0f                	jne    401053 <_ZNSt6vectorISt6threadSaIS0_EED1Ev+0x25>
+  401044:	48 83 c0 08          	add    $0x8,%rax
+  401048:	48 39 c2             	cmp    %rax,%rdx
+  40104b:	74 0b                	je     401058 <_ZNSt6vectorISt6threadSaIS0_EED1Ev+0x2a>
+  40104d:	48 83 38 00          	cmpq   $0x0,(%rax)
+  401051:	74 f1                	je     401044 <_ZNSt6vectorISt6threadSaIS0_EED1Ev+0x16>
+	std::terminate();
+  401053:	e8 d8 fb ff ff       	callq  400c30 <_ZSt9terminatev@plt>
+#endif
+
+      ~_Vector_base() _GLIBCXX_NOEXCEPT
+      {
+	_M_deallocate(_M_impl._M_start,
+		      _M_impl._M_end_of_storage - _M_impl._M_start);
+  401058:	48 8b 3f             	mov    (%rdi),%rdi
+
+      void
+      _M_deallocate(pointer __p, size_t __n)
+      {
+	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+	if (__p)
+  40105b:	48 85 ff             	test   %rdi,%rdi
+  40105e:	74 05                	je     401065 <_ZNSt6vectorISt6threadSaIS0_EED1Ev+0x37>
+	  {
+	    ::operator delete(__p, std::align_val_t(alignof(_Tp)));
+	    return;
+	  }
+#endif
+	::operator delete(__p);
+  401060:	e8 3b fc ff ff       	callq  400ca0 <_ZdlPv@plt>
+      ~vector() _GLIBCXX_NOEXCEPT
+      {
+	std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+		      _M_get_Tp_allocator());
+	_GLIBCXX_ASAN_ANNOTATE_BEFORE_DEALLOC;
+      }
+  401065:	48 83 c4 08          	add    $0x8,%rsp
+  401069:	c3                   	retq   
+
+000000000040106a <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_>:
+
+#if __cplusplus >= 201103L
+  template<typename _Tp, typename _Alloc>
+    template<typename... _Args>
+      void
+      vector<_Tp, _Alloc>::
+  40106a:	41 57                	push   %r15
+  40106c:	41 56                	push   %r14
+  40106e:	41 55                	push   %r13
+  401070:	41 54                	push   %r12
+  401072:	55                   	push   %rbp
+  401073:	53                   	push   %rbx
+  401074:	48 83 ec 28          	sub    $0x28,%rsp
+  401078:	49 89 fe             	mov    %rdi,%r14
+  40107b:	49 89 f5             	mov    %rsi,%r13
+  40107e:	48 89 54 24 10       	mov    %rdx,0x10(%rsp)
+  401083:	49 89 f4             	mov    %rsi,%r12
+
+      // [23.2.4.2] capacity
+      /**  Returns the number of elements in the %vector.  */
+      size_type
+      size() const _GLIBCXX_NOEXCEPT
+      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+  401086:	48 8b 5f 08          	mov    0x8(%rdi),%rbx
+  40108a:	48 8b 2f             	mov    (%rdi),%rbp
+  40108d:	48 89 d8             	mov    %rbx,%rax
+  401090:	48 29 e8             	sub    %rbp,%rax
+    max(const _Tp& __a, const _Tp& __b)
+    {
+      // concept requirements
+      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
+      //return  __a < __b ? __b : __a;
+      if (__a < __b)
+  401093:	48 c1 f8 03          	sar    $0x3,%rax
+  401097:	0f 84 8c 00 00 00    	je     401129 <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0xbf>
+      _M_check_len(size_type __n, const char* __s) const
+      {
+	if (max_size() - size() < __n)
+	  __throw_length_error(__N(__s));
+
+	const size_type __len = size() + std::max(size(), __n);
+  40109d:	48 8d 3c 00          	lea    (%rax,%rax,1),%rdi
+  4010a1:	48 89 7c 24 08       	mov    %rdi,0x8(%rsp)
+	return (__len < size() || __len > max_size()) ? max_size() : __len;
+  4010a6:	48 39 f8             	cmp    %rdi,%rax
+  4010a9:	77 62                	ja     40110d <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0xa3>
+  4010ab:	48 b8 ff ff ff ff ff 	movabs $0x1fffffffffffffff,%rax
+  4010b2:	ff ff 1f 
+  4010b5:	48 39 c7             	cmp    %rax,%rdi
+  4010b8:	77 53                	ja     40110d <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0xa3>
+  template<typename _Iterator, typename _Container>
+    inline typename __normal_iterator<_Iterator, _Container>::difference_type
+    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
+	      const __normal_iterator<_Iterator, _Container>& __rhs)
+    _GLIBCXX_NOEXCEPT
+    { return __lhs.base() - __rhs.base(); }
+  4010ba:	48 89 f0             	mov    %rsi,%rax
+  4010bd:	48 29 e8             	sub    %rbp,%rax
+  4010c0:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+
+      pointer
+      _M_allocate(size_t __n)
+      {
+	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+	return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+  4010c5:	41 bf 00 00 00 00    	mov    $0x0,%r15d
+  4010cb:	48 83 7c 24 08 00    	cmpq   $0x0,0x8(%rsp)
+  4010d1:	74 7f                	je     401152 <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0xe8>
+  4010d3:	eb 68                	jmp    40113d <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0xd3>
+      template<typename _InputIterator, typename _ForwardIterator>
+        static _ForwardIterator
+        __uninit_copy(_InputIterator __first, _InputIterator __last,
+		      _ForwardIterator __result)
+        {
+	  _ForwardIterator __cur = __result;
+  4010d5:	4d 89 fc             	mov    %r15,%r12
+  4010d8:	e9 cd 00 00 00       	jmpq   4011aa <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0x140>
+
+      void
+      _M_deallocate(pointer __p, size_t __n)
+      {
+	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+	if (__p)
+  4010dd:	48 85 ed             	test   %rbp,%rbp
+  4010e0:	74 08                	je     4010ea <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0x80>
+  4010e2:	48 89 ef             	mov    %rbp,%rdi
+  4010e5:	e8 b6 fb ff ff       	callq  400ca0 <_ZdlPv@plt>
+	}
+      _GLIBCXX_ASAN_ANNOTATE_REINIT;
+      std::_Destroy(__old_start, __old_finish, _M_get_Tp_allocator());
+      _M_deallocate(__old_start,
+		    this->_M_impl._M_end_of_storage - __old_start);
+      this->_M_impl._M_start = __new_start;
+  4010ea:	4d 89 3e             	mov    %r15,(%r14)
+      this->_M_impl._M_finish = __new_finish;
+  4010ed:	4d 89 66 08          	mov    %r12,0x8(%r14)
+      this->_M_impl._M_end_of_storage = __new_start + __len;
+  4010f1:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  4010f6:	49 8d 04 c7          	lea    (%r15,%rax,8),%rax
+  4010fa:	49 89 46 10          	mov    %rax,0x10(%r14)
+    }
+  4010fe:	48 83 c4 28          	add    $0x28,%rsp
+  401102:	5b                   	pop    %rbx
+  401103:	5d                   	pop    %rbp
+  401104:	41 5c                	pop    %r12
+  401106:	41 5d                	pop    %r13
+  401108:	41 5e                	pop    %r14
+  40110a:	41 5f                	pop    %r15
+  40110c:	c3                   	retq   
+  40110d:	4c 89 e8             	mov    %r13,%rax
+  401110:	48 29 e8             	sub    %rbp,%rax
+  401113:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+      {
+	if (max_size() - size() < __n)
+	  __throw_length_error(__N(__s));
+
+	const size_type __len = size() + std::max(size(), __n);
+	return (__len < size() || __len > max_size()) ? max_size() : __len;
+  401118:	48 b8 ff ff ff ff ff 	movabs $0x1fffffffffffffff,%rax
+  40111f:	ff ff 1f 
+  401122:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+  401127:	eb 14                	jmp    40113d <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0xd3>
+  401129:	48 89 f0             	mov    %rsi,%rax
+  40112c:	48 29 e8             	sub    %rbp,%rax
+  40112f:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+      _M_check_len(size_type __n, const char* __s) const
+      {
+	if (max_size() - size() < __n)
+	  __throw_length_error(__N(__s));
+
+	const size_type __len = size() + std::max(size(), __n);
+  401134:	48 c7 44 24 08 01 00 	movq   $0x1,0x8(%rsp)
+  40113b:	00 00 
+	  {
+	    std::align_val_t __al = std::align_val_t(alignof(_Tp));
+	    return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp), __al));
+	  }
+#endif
+	return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+  40113d:	48 8b 44 24 08       	mov    0x8(%rsp),%rax
+  401142:	48 8d 3c c5 00 00 00 	lea    0x0(,%rax,8),%rdi
+  401149:	00 
+  40114a:	e8 61 fb ff ff       	callq  400cb0 <_Znwm@plt>
+  40114f:	49 89 c7             	mov    %rax,%r15
+  401152:	48 8b 74 24 10       	mov    0x10(%rsp),%rsi
+  401157:	48 8b 06             	mov    (%rsi),%rax
+  40115a:	48 8b 7c 24 18       	mov    0x18(%rsp),%rdi
+  40115f:	49 89 04 3f          	mov    %rax,(%r15,%rdi,1)
+      __b = _GLIBCXX_MOVE(__tmp);
+  401163:	48 c7 06 00 00 00 00 	movq   $0x0,(%rsi)
+	  __try
+	    {
+	      for (; __first != __last; ++__first, (void)++__cur)
+  40116a:	49 39 ed             	cmp    %rbp,%r13
+  40116d:	0f 84 62 ff ff ff    	je     4010d5 <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0x6b>
+  401173:	48 89 e8             	mov    %rbp,%rax
+      template<typename _InputIterator, typename _ForwardIterator>
+        static _ForwardIterator
+        __uninit_copy(_InputIterator __first, _InputIterator __last,
+		      _ForwardIterator __result)
+        {
+	  _ForwardIterator __cur = __result;
+  401176:	4c 89 fa             	mov    %r15,%rdx
+    class id
+    {
+      native_handle_type	_M_thread;
+
+    public:
+      id() noexcept : _M_thread() { }
+  401179:	48 c7 02 00 00 00 00 	movq   $0x0,(%rdx)
+    {
+      // concept requirements
+      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+
+      _Tp __tmp = _GLIBCXX_MOVE(__a);
+      __a = _GLIBCXX_MOVE(__b);
+  401180:	48 8b 08             	mov    (%rax),%rcx
+  401183:	48 89 0a             	mov    %rcx,(%rdx)
+      __b = _GLIBCXX_MOVE(__tmp);
+  401186:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+	  __try
+	    {
+	      for (; __first != __last; ++__first, (void)++__cur)
+  40118d:	48 83 c2 08          	add    $0x8,%rdx
+  401191:	48 83 c0 08          	add    $0x8,%rax
+  401195:	49 39 c4             	cmp    %rax,%r12
+  401198:	75 df                	jne    401179 <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0x10f>
+  40119a:	49 8d 45 f8          	lea    -0x8(%r13),%rax
+  40119e:	48 29 e8             	sub    %rbp,%rax
+  4011a1:	48 c1 e8 03          	shr    $0x3,%rax
+  4011a5:	4d 8d 64 c7 08       	lea    0x8(%r15,%rax,8),%r12
+	  __new_finish
+	    = std::__uninitialized_move_if_noexcept_a
+	    (__old_start, __position.base(),
+	     __new_start, _M_get_Tp_allocator());
+
+	  ++__new_finish;
+  4011aa:	49 83 c4 08          	add    $0x8,%r12
+  4011ae:	4c 89 e8             	mov    %r13,%rax
+      template<typename _InputIterator, typename _ForwardIterator>
+        static _ForwardIterator
+        __uninit_copy(_InputIterator __first, _InputIterator __last,
+		      _ForwardIterator __result)
+        {
+	  _ForwardIterator __cur = __result;
+  4011b1:	4c 89 e2             	mov    %r12,%rdx
+	  __try
+	    {
+	      for (; __first != __last; ++__first, (void)++__cur)
+  4011b4:	49 39 dd             	cmp    %rbx,%r13
+  4011b7:	74 2d                	je     4011e6 <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0x17c>
+    {
+      // concept requirements
+      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+
+      _Tp __tmp = _GLIBCXX_MOVE(__a);
+      __a = _GLIBCXX_MOVE(__b);
+  4011b9:	48 8b 08             	mov    (%rax),%rcx
+  4011bc:	48 89 0a             	mov    %rcx,(%rdx)
+      __b = _GLIBCXX_MOVE(__tmp);
+  4011bf:	48 c7 00 00 00 00 00 	movq   $0x0,(%rax)
+  4011c6:	48 83 c2 08          	add    $0x8,%rdx
+  4011ca:	48 83 c0 08          	add    $0x8,%rax
+  4011ce:	48 39 c3             	cmp    %rax,%rbx
+  4011d1:	75 e6                	jne    4011b9 <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0x14f>
+  4011d3:	48 89 d8             	mov    %rbx,%rax
+  4011d6:	4c 29 e8             	sub    %r13,%rax
+  4011d9:	48 8d 40 f8          	lea    -0x8(%rax),%rax
+  4011dd:	48 c1 e8 03          	shr    $0x3,%rax
+  4011e1:	4d 8d 64 c4 08       	lea    0x8(%r12,%rax,8),%r12
+  4011e6:	48 39 eb             	cmp    %rbp,%rbx
+  4011e9:	0f 84 ee fe ff ff    	je     4010dd <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0x73>
+	    __depend);
+      }
+
+    ~thread()
+    {
+      if (joinable())
+  4011ef:	48 83 7d 00 00       	cmpq   $0x0,0x0(%rbp)
+  4011f4:	75 16                	jne    40120c <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0x1a2>
+  4011f6:	48 89 e8             	mov    %rbp,%rax
+  4011f9:	48 83 c0 08          	add    $0x8,%rax
+  4011fd:	48 39 d8             	cmp    %rbx,%rax
+  401200:	0f 84 dc fe ff ff    	je     4010e2 <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0x78>
+  401206:	48 83 38 00          	cmpq   $0x0,(%rax)
+  40120a:	74 ed                	je     4011f9 <_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJS0_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_+0x18f>
+	std::terminate();
+  40120c:	e8 1f fa ff ff       	callq  400c30 <_ZSt9terminatev@plt>
+  401211:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+  401218:	00 00 00 
+  40121b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000401220 <__libc_csu_init>:
+  401220:	41 57                	push   %r15
+  401222:	41 89 ff             	mov    %edi,%r15d
+  401225:	41 56                	push   %r14
+  401227:	49 89 f6             	mov    %rsi,%r14
+  40122a:	41 55                	push   %r13
+  40122c:	49 89 d5             	mov    %rdx,%r13
+  40122f:	41 54                	push   %r12
+  401231:	4c 8d 25 98 0b 20 00 	lea    0x200b98(%rip),%r12        # 601dd0 <__frame_dummy_init_array_entry>
+  401238:	55                   	push   %rbp
+  401239:	48 8d 2d a0 0b 20 00 	lea    0x200ba0(%rip),%rbp        # 601de0 <__init_array_end>
+  401240:	53                   	push   %rbx
+  401241:	4c 29 e5             	sub    %r12,%rbp
+  401244:	31 db                	xor    %ebx,%ebx
+  401246:	48 c1 fd 03          	sar    $0x3,%rbp
+  40124a:	48 83 ec 08          	sub    $0x8,%rsp
+  40124e:	e8 9d f9 ff ff       	callq  400bf0 <_init>
+  401253:	48 85 ed             	test   %rbp,%rbp
+  401256:	74 1e                	je     401276 <__libc_csu_init+0x56>
+  401258:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  40125f:	00 
+  401260:	4c 89 ea             	mov    %r13,%rdx
+  401263:	4c 89 f6             	mov    %r14,%rsi
+  401266:	44 89 ff             	mov    %r15d,%edi
+  401269:	41 ff 14 dc          	callq  *(%r12,%rbx,8)
+  40126d:	48 83 c3 01          	add    $0x1,%rbx
+  401271:	48 39 eb             	cmp    %rbp,%rbx
+  401274:	75 ea                	jne    401260 <__libc_csu_init+0x40>
+  401276:	48 83 c4 08          	add    $0x8,%rsp
+  40127a:	5b                   	pop    %rbx
+  40127b:	5d                   	pop    %rbp
+  40127c:	41 5c                	pop    %r12
+  40127e:	41 5d                	pop    %r13
+  401280:	41 5e                	pop    %r14
+  401282:	41 5f                	pop    %r15
+  401284:	c3                   	retq   
+  401285:	66 66 2e 0f 1f 84 00 	data32 nopw %cs:0x0(%rax,%rax,1)
+  40128c:	00 00 00 00 
+
+0000000000401290 <__libc_csu_fini>:
+  401290:	f3 c3                	repz retq 
+  401292:	66 90                	xchg   %ax,%ax
+
+Disassembly of section .fini:
+
+0000000000401294 <_fini>:
+  401294:	48 83 ec 08          	sub    $0x8,%rsp
+  401298:	48 83 c4 08          	add    $0x8,%rsp
+  40129c:	c3                   	retq   
