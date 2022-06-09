@@ -1,4 +1,10 @@
 
+thread1:
+	g++ -O3 -g -lpthread -DSMART_POLITE ./thread1.cpp && ./a.out
+
+map:
+	g++ -O1 -g -lpthread -DSMART_POLITE ./map.cpp && ./a.out
+
 lock_problem_cond:
 	clang++ -std=c++11 -stdlib=libc++ ./lock_problem_cond.cpp && ./a.out
 	#g++ --std=c11 -lpthread -DSMART_POLITE ./lock_problem_cond.cpp && ./a.out
