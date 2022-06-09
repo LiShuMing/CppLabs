@@ -5,6 +5,9 @@ thread1:
 map:
 	g++ -O1 -g -lpthread -DSMART_POLITE ./map.cpp && ./a.out
 
+consistent_hash:
+	clang++ -std=c++11 -stdlib=libc++ ./consistent_hash.cc && ./a.out
+
 lock_problem_cond:
 	clang++ -std=c++11 -stdlib=libc++ ./lock_problem_cond.cpp && ./a.out
 	#g++ --std=c11 -lpthread -DSMART_POLITE ./lock_problem_cond.cpp && ./a.out
