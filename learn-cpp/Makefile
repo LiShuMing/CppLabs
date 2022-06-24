@@ -8,6 +8,13 @@ map:
 consistent_hash:
 	clang++ -std=c++11 -stdlib=libc++ ./consistent_hash.cc && ./a.out
 
+# todo:
+mpmc_queue:
+	clang++ -std=c++11 -stdlib=libc++ ./mpmc_queue.cc && ./a.out
+
+queue:
+	clang++ -std=c++11 -stdlib=libc++ ./queue.cpp && ./a.out
+
 lock_problem_cond:
 	clang++ -std=c++11 -stdlib=libc++ ./lock_problem_cond.cpp && ./a.out
 	#g++ --std=c11 -lpthread -DSMART_POLITE ./lock_problem_cond.cpp && ./a.out
