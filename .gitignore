@@ -1,8 +1,7 @@
 cmake-build-debug/
 .idea/
-
-1
 target/
 *.out
 .gdb_history
 *.swp
+build_Release/

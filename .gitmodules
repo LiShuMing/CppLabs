@@ -1,3 +1,21 @@
-[submodule "lib/googletest"]
-	path = lib/googletest
-	url = https://github.com/google/googletest
+[submodule "thirdparty/googletest"]
+	path = thirdparty/googletest
+	url = https://github.com/google/googletest/
+[submodule "thirdparty/benchmark"]
+	path = thirdparty/benchmark
+	url = https://github.com/google/benchmark.git
+[submodule "thirdparty/gperftools"]
+	path = thirdparty/gperftools
+	url = https://github.com/stdpain/gperftools
+[submodule "thirdparty/glog"]
+	path = thirdparty/glog
+	url = https://github.com/google/glog
+[submodule "thirdparty/fmt"]
+	path = thirdparty/fmt
+	url = https://github.com/fmtlib/fmt
+[submodule "thirdparty/phmap"]
+	path = thirdparty/phmap
+	url = https://github.com/greg7mdp/parallel-hashmap
+[submodule "thirdparty/robin-map"]
+	path = thirdparty/robin-map
+	url = https://github.com/Tessil/robin-map

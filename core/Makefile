@@ -1,3 +1,8 @@
+data_align:
+	g++ -O3 -g -lpthread -DSMART_POLITE ./data_align.cpp && ./a.out
+
+cpp_derived:
+	g++ -O3 -g -lpthread -DSMART_POLITE ./cpp_derived.cpp && ./a.out
 
 thread1:
 	g++ -O3 -g -lpthread -DSMART_POLITE ./thread1.cpp && ./a.out
@@ -20,7 +25,7 @@ lock_problem_cond:
 	#g++ --std=c11 -lpthread -DSMART_POLITE ./lock_problem_cond.cpp && ./a.out
 
 data_struct:
-	g++ -O1 -g -lpthread -DSMART_POLITE ./data_struct.cpp && ./a.out
+	g++ -O2 -Wall -pedantic -Wextra -Wfatal-errors -mpopcnt -fabi-version=6 -mavx2 -DHAVE_AVX2_INSTRUCTIONS -g -lpthread -DSMART_POLITE ./data_struct.cpp && ./a.out
 
 lock_problem_dining:
 	g++ -lpthread -DSMART_POLITE ./lock_problem_dining.cpp && ./a.out
