@@ -31,10 +31,6 @@ struct X
    }
 };
 
-void testX() {
-   X x;
-}
-
 void test1()
 {
     std::map<int, X> numbers = {{1, X()}, {2, X()}, {3, X()}};
@@ -118,9 +114,8 @@ void test4() {
 }
 
 int main() {
-  // test1();
-  //testX();
-  //test2();
-  //test3();
+  test1();
+  test2();
+  test3();
   test4();
 }

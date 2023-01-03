@@ -26,6 +26,10 @@ else()
     message(FATAL_ERROR "Unknown build type: ${CMAKE_BUILD_TYPE}")
 endif()
 
+#include
+include_directories(${PROJECT_SOURCE_DIR}/src/include)
+# include_directories(SYSTEM ${PROJECT_SOURCE_DIR}/third-party/gtest-1.7.0/fused-src)
+
 # thirdparty
 add_subdirectory(thirdparty/googletest)
 add_subdirectory(thirdparty/benchmark)
@@ -34,5 +38,6 @@ add_subdirectory(thirdparty/fmt)
 # add_subdirectory(thirdparty/glog)
 
 # src
-# add_subdirectory(core)
 add_subdirectory(bench)
+add_subdirectory(test)
+add_subdirectory(src/main)

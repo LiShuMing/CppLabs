@@ -71,7 +71,6 @@ std::string ConsistentHash::GetServerIndex(const std::string& key)
     return it->second;
 }
 
-// 给区间 [objMin, objMax] 上的数据寻找合适的存储节点
 void ConsistentHash::StatisticPerf(std::string& label, int objMin, int objMax) {
     std::map<std::string, int> cnt;
     for (int i = objMin; i <= objMax; i++) {

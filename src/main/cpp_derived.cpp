@@ -15,7 +15,6 @@
 #include <x86intrin.h>
 
 using namespace std;
-//A是一个父类 , 析构函数不是虚函数
 class A
 {
 public:
@@ -29,7 +28,6 @@ public:
 	}
 };
 
-//B是A的子类
 class B : public A
 {
 public:

@@ -1,6 +1,7 @@
 message(STATUS "link_libs=${link_libs}")
 
 set(BENCHMARKS
+        benchmark_allocator.cpp
         benchmark_basic.cpp
         )
 

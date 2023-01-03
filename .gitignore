@@ -5,3 +5,6 @@ target/
 .gdb_history
 *.swp
 build_Release/
+.vscode/
+thirdparty/
+
