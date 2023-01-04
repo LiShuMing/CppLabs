@@ -5,8 +5,6 @@ set(MAINS
     cpp_derived.cpp
     data_align.cpp
     data_struct.cpp
-    map.cpp
-    queue.cpp
 )
 
 foreach(src ${MAINS})

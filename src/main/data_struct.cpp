@@ -111,17 +111,17 @@ inline void print_mm256(__m256i& v) {
 }
 
 void test3() {
-	__m256i t = _mm256_set_epi64x(1, 2, 3, 4);
-	print_mm256<long>(t);
-	//auto t1 = _mm256_set1_epi64x(0xBF);
-	auto t1 = _mm256_set1_epi8(0xBF);
-	print_mm256<long>(t1);
+	// __m256i t = _mm256_set_epi64x(1, 2, 3, 4);
+	// print_mm256<long>(t);
+	// //auto t1 = _mm256_set1_epi64x(0xBF);
+	// auto t1 = _mm256_set1_epi8(0xBF);
+	// print_mm256<long>(t1);
 
-	vector<int> v1{1, 2, 3};
-	vector<int> v2{1, 2, 3};
-	vector<int> v3{1, 3, 2};
-	cout <<"v1 ==v2:"<< (v1 == v2)<<std::endl;
-	cout <<"v1 ==v3:"<< (v1 == v3)<<std::endl;
+	// vector<int> v1{1, 2, 3};
+	// vector<int> v2{1, 2, 3};
+	// vector<int> v3{1, 3, 2};
+	// cout <<"v1 ==v2:"<< (v1 == v2)<<std::endl;
+	// cout <<"v1 ==v3:"<< (v1 == v3)<<std::endl;
 }
 
 void test4() {

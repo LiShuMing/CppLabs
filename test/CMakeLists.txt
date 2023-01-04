@@ -1,6 +1,8 @@
 message(STATUS "link_libs=${link_libs}")
 set(TESTS
-        gtest_demo.cpp
+        allocator_test.cpp
+        basic_test.cpp
+        thread_test.cpp
         )
 foreach (src ${TESTS})
     get_filename_component(exe ${src} NAME_WE)

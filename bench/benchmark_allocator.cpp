@@ -2,17 +2,24 @@
 
 #include "default_init_default.h"
 
-static void BM_StringCreation(benchmark::State& state) {
-    for (auto _ : state) std::string empty_string;
+template <class T, typename A = std::allocator<T>>
+static void BM_Stl_Resize(benchmark::State& state) {
+    for (auto _: state) {
+        std::vector<T> vec;
+        vec.resize(state.range(0));
+    }
 }
-// Register the function as a benchmark
-BENCHMARK(BM_StringCreation);
 
-// Define another benchmark
-static void BM_StringCopy(benchmark::State& state) {
-    std::string x = "hello";
-    for (auto _ : state) std::string copy(x);
+template <class T, typename A = std::allocator<T>>
+static void BM_Raw_Resize(benchmark::State& state) {
+    for (auto _: state) {
+        raw::raw_vector<T> vec;
+        vec.resize(state.range(0));
+        std::vector<T> rv1(std::move(reinterpret_cast<std::vector<T> &>(vec)));
+    }
 }
-BENCHMARK(BM_StringCopy);
+
+BENCHMARK_TEMPLATE(BM_Stl_Resize, uint8_t, uint8_t)->RangeMultiplier(8)->Range(1, 8 << 10);
+BENCHMARK_TEMPLATE(BM_Raw_Resize, uint8_t, uint8_t)->RangeMultiplier(8)->Range(1, 8 << 10);
 
 BENCHMARK_MAIN();
