@@ -7,6 +7,7 @@
 #include <map>
 #include <queue>
 #include <string>
+#include <shared_mutex>
 #include <vector>
 
 #include "foo.h"
@@ -195,6 +196,113 @@ TEST_F(BasicTest, TestString1) {
     int ret = std::strcmp("a ", "a    ");
     std::cout << "ret :" << ret << std::endl;
     ASSERT_EQ(ret, -1);
+}
+
+TEST_F(BasicTest, TestSharedPtr1) {
+    int* a = new int(1);
+    {
+        shared_ptr<int> a_ptr(a);
+        std::cout << "shared ptr a:" << *a_ptr << std::endl;
+        // pointer a is destructor here!!!
+    }
+
+    // WRONG VALUE!
+    std::cout << "ptr a:" << *a << std::endl;
+    // dangerous!!! double free
+    // delete a;
+}
+
+TEST_F(BasicTest, TestUniquePtr) {
+    std::unique_ptr<int> u_a1;
+    if (u_a1) {
+        std::cout << "u_a1 is not empty" << std::endl;;
+    } else {
+        std::cout << "u_a1 is empty" << std::endl;;
+    }
+}
+
+class V1 {
+public:
+    V1(std::vector<int> a) : _a(std::move(a)) {}
+    const std::vector<int>& a() const { return _a; }
+
+private:
+    std::vector<int> _a;
+};
+
+class V2 {
+public:
+    V2(std::vector<int>&& a) : _a(std::move(a)) {}
+    const std::vector<int>& a() const { return _a; }
+
+private:
+    std::vector<int> _a;
+};
+
+TEST_F(BasicTest, TestMove) {
+    {
+        std::cout << "V1" << std::endl;
+        std::vector<int> data;
+        data.push_back(1);
+        V1 v(data);
+        std::cout << "v1's data size:" << v.a().size() << ", data's size:" << data.size() << std::endl;
+    }
+    {
+        std::cout << "V1" << std::endl;
+        std::vector<int> data;
+        data.push_back(1);
+        V2 v(std::move(data));
+        std::cout << "v1's data size:" << v.a().size() << ", data's size:" << data.size() << std::endl;
+    }
+}
+
+TEST_F(BasicTest, TestSharedLock1) {
+    std::shared_mutex sm;
+    {
+        cout << "case 1" << endl;
+        std::unique_lock<std::shared_mutex> l1(sm);
+
+        // BAD!!!
+        // std::shared_lock<std::shared_mutex> l2(sm);
+        cout << "case 1 done" << endl;
+    }
+    {
+        cout << "case 2" << endl;
+        std::unique_lock<std::shared_mutex> l1(sm);
+        // BAD!!
+        // std::unique_lock<std::shared_mutex> l2(sm);
+        cout << "case 2 done" << endl;
+    }
+    {
+        cout << "case 3" << endl;
+        std::shared_lock<std::shared_mutex> l1(sm);
+        std::shared_lock<std::shared_mutex> l2(sm);
+        cout << "case 3 done" << endl;
+    }
+}
+
+TEST_F(BasicTest, TestSharedLock2) {
+    // std::shared_mutex sm;
+    // auto func1 = [=]() {
+    //     cout << "case 1" << endl;
+    //     std::unique_lock<std::shared_mutex> l1(sm);
+    //     std::shared_lock<std::shared_mutex> l2(sm);
+    //     cout << "case 1 done" << endl;
+    // };
+    // {
+    //     cout << "case 2" << endl;
+    //     std::unique_lock<std::shared_mutex> l1(sm);
+    //     std::unique_lock<std::shared_mutex> l2(sm);
+    //     cout << "case 2 done" << endl;
+    // }
+}
+
+TEST_F(BasicTest, TestAtomic) {
+    std::atomic<int32_t> a1 = 0;
+    auto t1 = a1.fetch_add(1);
+    cout << "t1:" << t1 << ", a1=" << a1 << endl;
+    auto t2 = a1.fetch_add(1) + 1;
+    cout << "t2:" << t2 << ", a1=" << a1 << endl;
 }
 
 } // namespace test

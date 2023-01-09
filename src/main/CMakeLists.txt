@@ -2,7 +2,6 @@ message(STATUS "link_libs=${link_libs}")
 
 set(MAINS
     consistent_hash.cpp
-    cpp_derived.cpp
     data_align.cpp
     data_struct.cpp
 )
