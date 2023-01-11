@@ -1,6 +1,0 @@
-cpu=Bulldozer FX-8150
-architecture=SSE
-compiler=GCC 4.8.4 (Ubuntu)
-runs=5
-
-

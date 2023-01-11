@@ -1,5 +1,0 @@
-cpu=Skylake Core i7-6700 CPU @ 3.40GHz
-architecture=AVX2
-compiler=3.8.0-svn257311-1~exp1 (Ubuntu)
-runs=5
-

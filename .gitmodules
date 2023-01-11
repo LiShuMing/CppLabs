@@ -19,3 +19,9 @@
 [submodule "thirdparty/robin-map"]
 	path = thirdparty/robin-map
 	url = https://github.com/Tessil/robin-map
+[submodule "thirdparty/CRoaring"]
+	path = thirdparty/CRoaring
+	url = https://github.com/RoaringBitmap/CRoaring
+[submodule "thirdparty/sse-popcount"]
+	path = thirdparty/sse-popcount
+	url = https://github.com/WojciechMula/sse-popcount

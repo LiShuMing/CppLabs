@@ -1,5 +1,0 @@
-cpu=Core i5 M540 @ 2.53GHz
-architecture=SSE
-compiler=GCC 4.9.2 (Debian 4.9.2-10)
-runs=5
-

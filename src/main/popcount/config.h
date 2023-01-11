@@ -23,7 +23,7 @@
 #   endif
 #endif
 
-#if !defined(HAVE_NEON_INSTRUCTIONS)
+#if defined(HAVE_NEON_INSTRUCTIONS)
 #   define HAVE_POPCNT_INSTRUCTION 1
 #endif
 
@@ -35,4 +35,3 @@
 #endif
 
 #define FORCE_INLINE inline __attribute__((always_inline))
-
