@@ -30,14 +30,35 @@ endif()
 include_directories(${PROJECT_SOURCE_DIR}/src/include)
 # include_directories(SYSTEM ${PROJECT_SOURCE_DIR}/third-party/gtest-1.7.0/fused-src)
 
+# pthread, required by absl see https://github.com/abseil/abseil-cpp/issues/183#issuecomment-458453010
+set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
+set(THREADS_PREFER_PTHREAD_FLAG TRUE)
+find_package(Threads REQUIRED)
+
 # thirdparty
 add_subdirectory(thirdparty/googletest)
 add_subdirectory(thirdparty/benchmark)
 add_subdirectory(thirdparty/gperftools)
 add_subdirectory(thirdparty/fmt)
 # add_subdirectory(thirdparty/glog)
+add_subdirectory(thirdparty/abseil-cpp)
+# add_subdirectory(thirdparty/boost)
+# add_subdirectory(thirdparty/folly)
 
 # src
 add_subdirectory(bench)
-add_subdirectory(test)
-add_subdirectory(src/main)
+# add_subdirectory(test)
+# add_subdirectory(src/main)
+
+# use ccache
+find_program(CCACHE_PROGRAM ccache)
+if(CCACHE_PROGRAM)
+    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
+endif(CCACHE_PROGRAM)
+
+# I like colors, even with ninja build
+if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+    add_compile_options (-fdiagnostics-color=always)
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+    add_compile_options (-fcolor-diagnostics)
+endif ()

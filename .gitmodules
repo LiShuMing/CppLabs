@@ -31,17 +31,9 @@
 	path = thirdparty/folly
 	url = https://github.com/facebook/folly.git
 	branch = master
-[submodule "thirdparty/robin-hood-hashing"]
-	path = thirdparty/robin-hood-hashing
-	url = https://github.com/martinus/robin-hood-hashing.git
-	branch = master
 [submodule "thirdparty/sparsepp"]
 	path = thirdparty/sparsepp
 	url = https://github.com/greg7mdp/sparsepp.git
-	branch = master
-[submodule "thirdparty/robin-map"]
-	path = thirdparty/robin-map
-	url = https://github.com/Tessil/robin-map.git
 	branch = master
 [submodule "thirdparty/phmap"]
 	path = thirdparty/phmap
@@ -66,3 +58,10 @@
 	path = thirdparty/parallel-hashmap
 	url = https://github.com/greg7mdp/parallel-hashmap
 	branch = master
+[submodule "thirdparty/robin-hood-hashing"]
+	path = thirdparty/robin-hood-hashing
+	url = https://github.com/martinus/robin-hood-hashing.git
+[submodule "thirdparty/boost"]
+	path = thirdparty/boost
+	url = https://github.com/boostorg/boost.git
+	ignore = all

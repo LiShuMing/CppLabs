@@ -4,6 +4,7 @@ set(TESTS
         basic_test.cpp
         thread_test.cpp
         )
+
 foreach (src ${TESTS})
     get_filename_component(exe ${src} NAME_WE)
     add_executable(${exe} ${src} )
