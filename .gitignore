@@ -6,5 +6,7 @@ target/
 *.swp
 build_Release/
 .vscode/
+speed_avx512bw_g++
+verify_avx512bw_g++
 thirdparty/
 

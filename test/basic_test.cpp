@@ -4,6 +4,7 @@
 #include <cstring>
 #include <functional>
 #include <iostream>
+#include <list>
 #include <map>
 #include <queue>
 #include <string>
@@ -303,6 +304,25 @@ TEST_F(BasicTest, TestAtomic) {
     cout << "t1:" << t1 << ", a1=" << a1 << endl;
     auto t2 = a1.fetch_add(1) + 1;
     cout << "t2:" << t2 << ", a1=" << a1 << endl;
+}
+
+void print_container(const std::list<int>& c) {
+    for (int i : c) std::cout << i << " ";
+    std::cout << '\n';
+}
+
+TEST_F(BasicTest, TestList) {
+    std::list<int> c{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    print_container(c);
+    // for (std::list<int>::iterator it = c.begin(); it != c.end();) {
+    std::list<int>::iterator it = c.begin();
+    while (it != c.end()) {
+        if (*it % 2 == 0) {
+            it = c.erase(it);
+        }
+        ++it;
+    }
+    print_container(c);
 }
 
 } // namespace test
