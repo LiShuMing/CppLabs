@@ -47,8 +47,8 @@ add_subdirectory(thirdparty/abseil-cpp)
 
 # src
 add_subdirectory(bench)
-# add_subdirectory(test)
-# add_subdirectory(src/main)
+add_subdirectory(test)
+add_subdirectory(src/main)
 
 # use ccache
 find_program(CCACHE_PROGRAM ccache)

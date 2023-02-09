@@ -325,6 +325,19 @@ TEST_F(BasicTest, TestList) {
     print_container(c);
 }
 
+TEST_F(BasicTest, TestVector_CopyBack) {
+    std::vector<std::string> a1 {"a", "b", "c"};
+    std::vector<std::string> a2;
+    a2.resize(a1.size() - 1);
+    std::copy_backward(a1.begin() + 1, a1.end(), a2.end());
+    for (auto& a: a2) {
+        std::cout <<"a:" << a << "\n";
+    }
+
+    // !!!
+    a2.resize(0);
+}
+
 } // namespace test
 
 int main(int argc, char** argv) {
