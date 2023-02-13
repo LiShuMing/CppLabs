@@ -328,33 +328,6 @@ set_target_properties(opentelemetry_resources PROPERTIES IMPORTED_LOCATION ${THI
 add_library(opentelemetry_exporter_jaeger_trace STATIC IMPORTED GLOBAL)
 set_target_properties(opentelemetry_exporter_jaeger_trace PROPERTIES IMPORTED_LOCATION ${THIRDPARTY_DIR}/lib64/libopentelemetry_exporter_jaeger_trace.a)
 
-# cachelib
-set(CACHELIB_DEPENDENCIES
-    cachelib_common
-    cachelib_allocator
-    cachelib_datatype
-    cachelib_navy
-    cachelib_shm
-    folly
-    fmtd
-    thriftcpp2
-    thrift-core
-    thriftmetadata
-    thriftfrozen2
-    thriftprotocol
-    thrifttype
-    transport
-    rpcmetadata
-    thriftanyrep
-    thrifttyperep
-    thriftannotation
-    concurrency
-    async
-    wangle
-)
-
-
-
 # Check if functions are supported in this platform. All flags will generated
 # in gensrc/build/common/env_config.h.
 # You can check funcion here which depends on platform. Don't forget add this
@@ -527,7 +500,6 @@ set(WL_END_GROUP "-Wl,--end-group")
 # Set starrocks libraries
 set(STARROCKS_LINK_LIBS
     ${WL_START_GROUP}
-    Tools
     ${WL_END_GROUP}
 )
 
@@ -689,6 +661,28 @@ else()
     # output *.exe to output/lib
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIR}/lib)
 endif ()
+
+# Add a benchmark to BE
+FUNCTION(ADD_BE_BENCH BENCH_NAME)
+    message(STATUS "Add Be Bench")
+    set(BUILD_OUTPUT_ROOT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/")
+    # This gets the directory where the test is from (e.g. 'exprs' or 'runtime')
+    get_filename_component(DIR_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+    get_filename_component(BENCH_DIR_NAME ${BENCH_NAME} PATH)
+    set(BENCH_OUTPUT_DIR_NAME "output")
+    get_filename_component(BENCH_FILE_NAME ${BENCH_NAME} NAME)
+    
+    find_package(benchmark REQUIRED)
+    ADD_EXECUTABLE(${BENCH_FILE_NAME} ${BENCH_NAME}.cpp)
+    TARGET_LINK_LIBRARIES(${BENCH_FILE_NAME} ${TEST_LINK_LIBS} benchmark benchmark_main)
+
+    SET_TARGET_PROPERTIES(${BENCH_FILE_NAME} PROPERTIES COMPILE_FLAGS "-fno-access-control")
+    SET_TARGET_PROPERTIES(${BENCH_FILE_NAME} PROPERTIES COMPILE_FLAGS ${CXX_FLAGS_RELEASE})
+    if (NOT "${BENCH_OUTPUT_DIR_NAME}" STREQUAL "")
+        SET_TARGET_PROPERTIES(${BENCH_FILE_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${BUILD_OUTPUT_ROOT_DIRECTORY}/${BENCH_OUTPUT_DIR_NAME}")
+    endif()
+    ADD_TEST(${BENCH_FILE_NAME} "${BUILD_OUTPUT_ROOT_DIRECTORY}/${BENCH_NAME}")
+ENDFUNCTION()
 
 message(STATUS "OK!")
 add_subdirectory(${SRC_DIR}/tools)
