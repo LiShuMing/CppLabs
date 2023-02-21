@@ -32,6 +32,7 @@ def handle_files(f_name):
     flag = True
     for line in fp.readlines():
         if "[result]" in line:
+            content += line
             flag = False
             continue
         if "[end]" in line:
@@ -41,6 +42,9 @@ def handle_files(f_name):
         content += line
     print(content)
     fp.close()
+    fp2 = open(f_name, 'w')
+    fp2.write(content)
+    fp2.close()
 
 if __name__ == "__main__":
     # test_sort_1()
@@ -49,4 +53,3 @@ if __name__ == "__main__":
     for i in range(1, 23):
         f_name = f_dir + "/q" + str(i) + ".sql"
         handle_files(f_name)
-        breawk
