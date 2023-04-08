@@ -1,4 +1,7 @@
 cmake-build-debug/
+cmake-build-release/
+cmake-build-*
+.clion.source.upload.marker
 .idea/
 target/
 *.out
@@ -8,8 +11,6 @@ build_Release/
 .vscode/
 speed_avx512bw_g++
 verify_avx512bw_g++
-thirdparty/
-
 # Prerequisites
 *.d
 

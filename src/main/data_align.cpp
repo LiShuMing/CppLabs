@@ -20,6 +20,7 @@ int main()
     int raw[2] = {0, 0};
     {
         int* ptr = raw;
+
         cout << "address of aligned pointer: " << (void*)ptr << endl;
         cout << "aligned access: " << test_duration(ptr).count() << "ms" << endl;
         *ptr = 0;

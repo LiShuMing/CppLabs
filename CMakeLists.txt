@@ -46,8 +46,8 @@ add_subdirectory(thirdparty/abseil-cpp)
 # add_subdirectory(thirdparty/folly)
 
 # src
-add_subdirectory(bench)
-add_subdirectory(test)
+#add_subdirectory(bench)
+#add_subdirectory(test)
 add_subdirectory(src/main)
 
 # use ccache
