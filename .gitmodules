@@ -22,3 +22,6 @@
 [submodule "thirdparty/folly"]
 	path = thirdparty/folly
 	url = git@github.com:facebook/folly.git
+[submodule "thirdparty/brpc"]
+	path = thirdparty/brpc
+	url = git@github.com:apache/brpc.git

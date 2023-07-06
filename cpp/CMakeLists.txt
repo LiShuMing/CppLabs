@@ -38,6 +38,7 @@ find_package(Threads REQUIRED)
 # thirdparty
 add_subdirectory(../thirdparty/googletest googletest)
 add_subdirectory(../thirdparty/benchmark benchmark)
+add_subdirectory(../thirdparty/brpc brpc)
 #add_subdirectory(thirdparty/gperftools)
 add_subdirectory(../thirdparty/fmt fmt)
 # add_subdirectory(thirdparty/glog)
