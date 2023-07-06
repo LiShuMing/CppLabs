@@ -13,4 +13,7 @@ public:
     static bool func1();
 };
 
+template<> bool Functions::func1<true>();
+template<> bool Functions::func1<false>();
+
 } // namespace detail

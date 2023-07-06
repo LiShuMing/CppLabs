@@ -50,3 +50,4 @@ verify_avx512bw_g++
 # generated files
 *.json
 *.html
+thirdparty

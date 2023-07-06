@@ -10,19 +10,12 @@
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
-// limitations under the License.#include "foo.h"
+// limitations under the License.#ifndef VEC_INTERPERTER_H
+#pragma once
 
-#include <iostream>
-#include "foo.h"
-
-namespace detail {
-
-template <bool a>
-bool Functions::func1() {
-    return a;
-}
-
-//template<> bool Functions::func1<true>();
-//template<> bool Functions::func1<false>();
-
-} // namespace
+namespace simple {
+    class Interpreter {
+    public:
+        Interpreter* getInstance();
+    };
+} // namespace stdpain

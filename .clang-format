@@ -3,7 +3,7 @@ Language: Cpp
 BasedOnStyle: Google
 AccessModifierOffset: -4
 AllowShortFunctionsOnASingleLine: Inline
-ColumnLimit: 120
+ColumnLimit: 100
 ConstructorInitializerIndentWidth: 8 # double of IndentWidth
 ContinuationIndentWidth: 8 # double of IndentWidth
 DerivePointerAlignment: false # always use PointerAlignment
@@ -13,19 +13,5 @@ PointerAlignment: Left
 ReflowComments: false
 SortUsingDeclarations: false
 SpacesBeforeTrailingComments: 1
-AllowShortFunctionsOnASingleLine: Inline
----
-Language: Java
-BasedOnStyle: Google
-AccessModifierOffset: -4
-AllowShortFunctionsOnASingleLine: Inline
-ColumnLimit: 120
-ConstructorInitializerIndentWidth: 8 # double of IndentWidth
-ContinuationIndentWidth: 8 # double of IndentWidth
-DerivePointerAlignment: false # always use PointerAlignment
-IndentCaseLabels: false
-IndentWidth: 4
-PointerAlignment: Left
-ReflowComments: false
-SortUsingDeclarations: false
-SpacesBeforeTrailingComments: 1
+SpaceBeforeCpp11BracedList: true
+
