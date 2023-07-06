@@ -13,11 +13,10 @@ foreach (src ${BENCHMARKS})
 endforeach ()
 add_custom_target(bench DEPENDS ${benchmarks_deps})
 
-file(GLOB SRC_BENCHMARKS "hashmap/benchmarks/*.cpp")
-file(GLOB SRC_APP "hashmap/app/*.cpp")
-
-file(GLOB INC_HASHES "hashmap/hashes/*")
-file(GLOB INC_MAPS "hashmap/maps/*")
+#file(GLOB SRC_BENCHMARKS "hashmap/benchmarks/*.cpp")
+#file(GLOB SRC_APP "hashmap/app/*.cpp")
+#file(GLOB INC_HASHES "hashmap/hashes/*")
+#file(GLOB INC_MAPS "hashmap/maps/*")
 
 # create targets for all map - hash pairs
 foreach(MAP_DIR ${INC_MAPS})
@@ -37,7 +36,7 @@ foreach(MAP_DIR ${INC_MAPS})
 
         add_executable(${EXECUTABLE_NAME} ${SRC_APP} ${SRC_BENCHMARKS} ${SRC_MAP_DIR} ${SRC_HASH_DIR})
         target_include_directories(${EXECUTABLE_NAME} PRIVATE "hashmap/app" "../../thirdparty" ${MAP_DIR} ${HASH_DIR} ${FOLLY_DIR})
-        
+
         if (EXISTS "${MAP_DIR}/dependencies.cmake")
             include("${MAP_DIR}/dependencies.cmake")
         endif ()

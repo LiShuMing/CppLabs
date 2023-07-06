@@ -11,16 +11,17 @@ BUILD_THREAD=12
 #BUILD_TYPE=ASAN
 BUILD_TYPE=Release
 BUILD_DIR=build_$BUILD_TYPE
-DIR=$(cd $(dirname $0) && pwd/cpp )
+DIR=$(cd $(dirname $0) && pwd )
+CPP_DIR=$DIR/cpp
 
 export CMAKE_GENERATOR="Ninja"
 
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
 export LD_LIBRARY_PATH=$JAVA_HOME/jre/lib/amd64/server/
 
-# rm -rf $DIR/$BUILD_DIR
-mkdir -p $DIR/$BUILD_DIR
-cd $DIR/$BUILD_DIR && 
+rm -rf $CPP_DIR/$BUILD_DIR
+mkdir -p $CPP_DIR/$BUILD_DIR
+cd $CPP_DIR/$BUILD_DIR &&
     cmake -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
         -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
         -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \

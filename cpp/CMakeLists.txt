@@ -36,10 +36,10 @@ set(THREADS_PREFER_PTHREAD_FLAG TRUE)
 find_package(Threads REQUIRED)
 
 # thirdparty
-add_subdirectory(../thirdparty/googletest)
-add_subdirectory(../thirdparty/benchmark)
+add_subdirectory(../thirdparty/googletest googletest)
+add_subdirectory(../thirdparty/benchmark benchmark)
 #add_subdirectory(thirdparty/gperftools)
-add_subdirectory(../thirdparty/fmt)
+add_subdirectory(../thirdparty/fmt fmt)
 # add_subdirectory(thirdparty/glog)
 #add_subdirectory(thirdparty/abseil-cpp)
 # add_subdirectory(thirdparty/boost)
