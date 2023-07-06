@@ -36,7 +36,7 @@ foreach(MAP_DIR ${INC_MAPS})
         file(GLOB SRC_HASH_DIR "${HASH_DIR}/*.cpp")
 
         add_executable(${EXECUTABLE_NAME} ${SRC_APP} ${SRC_BENCHMARKS} ${SRC_MAP_DIR} ${SRC_HASH_DIR})
-        target_include_directories(${EXECUTABLE_NAME} PRIVATE "hashmap/app" "../thirdparty" ${MAP_DIR} ${HASH_DIR} ${FOLLY_DIR})
+        target_include_directories(${EXECUTABLE_NAME} PRIVATE "hashmap/app" "../../thirdparty" ${MAP_DIR} ${HASH_DIR} ${FOLLY_DIR})
         
         if (EXISTS "${MAP_DIR}/dependencies.cmake")
             include("${MAP_DIR}/dependencies.cmake")

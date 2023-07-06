@@ -4,7 +4,6 @@ set(MAINS
     consistent_hash.cpp
     data_align.cpp
     data_struct.cpp
-        foo.cpp
     foo_main.cpp
 )
 

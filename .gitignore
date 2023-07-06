@@ -41,3 +41,4 @@ verify_avx512bw_g++
 *.json
 *.html
 tags
+.DS_Store

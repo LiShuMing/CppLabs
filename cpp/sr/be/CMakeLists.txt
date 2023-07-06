@@ -51,7 +51,7 @@ execute_process(COMMAND bash "-c" "uname -m"
 message(STATUS "Build target arch is ${CMAKE_BUILD_TARGET_ARCH}")
 
 # Set dirs
-set(BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
+set(BASE_DIR ".")
 set(BUILD_DIR "${CMAKE_CURRENT_BINARY_DIR}")
 set(THIRDPARTY_DIR "$ENV{STARROCKS_THIRDPARTY}/installed/")
 set(STARROCKS_THIRDPARTY "$ENV{STARROCKS_THIRDPARTY}")
@@ -331,7 +331,7 @@ set_target_properties(opentelemetry_exporter_jaeger_trace PROPERTIES IMPORTED_LO
 # Check if functions are supported in this platform. All flags will generated
 # in gensrc/build/common/env_config.h.
 # You can check funcion here which depends on platform. Don't forget add this
-# to be/src/common/env_config.h.in
+# to be/cpp/common/env_config.h.in
 include(CheckFunctionExists)
 check_function_exists(sched_getcpu HAVE_SCHED_GETCPU)
 
@@ -667,7 +667,7 @@ FUNCTION(ADD_BE_BENCH BENCH_NAME)
     message(STATUS "Add Be Bench")
     set(BUILD_OUTPUT_ROOT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/")
     # This gets the directory where the test is from (e.g. 'exprs' or 'runtime')
-    get_filename_component(DIR_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+    get_filename_component(DIR_NAME . NAME)
     get_filename_component(BENCH_DIR_NAME ${BENCH_NAME} PATH)
     set(BENCH_OUTPUT_DIR_NAME "output")
     get_filename_component(BENCH_FILE_NAME ${BENCH_NAME} NAME)

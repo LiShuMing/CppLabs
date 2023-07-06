@@ -15,14 +15,8 @@
 #include <iostream>
 #include "foo.h"
 
-namespace detail {
-
-template <bool a>
-bool Functions::func1() {
-    return a;
+int main() {
+//    bool ret = detail::Functions::template func1<false>();
+//    std::cout << "ret:" << ret << std::endl;
+    return 0;
 }
-
-//template<> bool Functions::func1<true>();
-//template<> bool Functions::func1<false>();
-
-} // namespace

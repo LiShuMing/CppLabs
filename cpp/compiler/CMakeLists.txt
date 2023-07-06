@@ -24,7 +24,7 @@ endif()
 
 set(GENSRC_DIR ${CMAKE_CURRENT_BINARY_DIR})
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(.)
 include_directories(${GENSRC_DIR})
 add_subdirectory(gen)
 
@@ -38,6 +38,6 @@ add_executable(interpreter
         )
 
 target_link_libraries(interpreter
-        Gen
+        gen
         Component
         )
