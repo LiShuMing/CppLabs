@@ -2,6 +2,8 @@ message(STATUS "link_libs=${link_libs}")
 set(TESTS
         allocator_test.cpp
         basic_test.cpp
+        lock_problem.cpp
+        lock_problem_dining.cpp
         thread_test.cpp
         )
 
