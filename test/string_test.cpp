@@ -31,7 +31,6 @@ TEST_F(StringTest, Test1) {
 
     // compute size
     for (size i = 0; i < str_size; i += 2) {
-        uint8_t decoded = 
     }
 }
 
