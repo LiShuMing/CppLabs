@@ -1,7 +1,11 @@
 cmake-build-debug/
+<<<<<<< HEAD
 cmake-build-release/
 cmake-build-*
 .clion.source.upload.marker
+=======
+cmake-build-release-default/
+>>>>>>> a1b2448 (fix bugs)
 .idea/
 target/
 *.out
@@ -50,4 +54,8 @@ verify_avx512bw_g++
 # generated files
 *.json
 *.html
+<<<<<<< HEAD
 thirdparty
+=======
+tags
+>>>>>>> a1b2448 (fix bugs)
