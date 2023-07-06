@@ -11,6 +11,7 @@ foreach (src ${BENCHMARKS})
     target_link_libraries(${exe} ${link_libs} benchmark pthread)
     list(APPEND benchmarks_deps ${exe})
 endforeach ()
+
 add_custom_target(bench DEPENDS ${benchmarks_deps})
 
 #file(GLOB SRC_BENCHMARKS "hashmap/benchmarks/*.cpp")

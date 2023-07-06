@@ -27,7 +27,7 @@ else()
 endif()
 
 #include
-include_directories(include)
+include_directories(main)
 # include_directories(SYSTEM ${PROJECT_SOURCE_DIR}/third-party/gtest-1.7.0/fused-cpp)
 
 # pthread, required by absl see https://github.com/abseil/abseil-cpp/issues/183#issuecomment-458453010
